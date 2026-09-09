@@ -1,0 +1,18 @@
+| 测试用例编号 | 测试描述 | 前置条件 | 测试步骤 | 预期结果 | 实际结果 |
+| --- | --- | --- | --- | --- | --- |
+| TC_REG_001 | 验证注册页面整体UI元素完整渲染展示 | 成功访问Customer registration注册页面 | 1.加载注册页面，自上而下检查全部页面元素 | 页面标题Customer registration居中正常显示；所有表单标签、输入框、下拉框、密码眼睛图标、Register按钮完整加载；必填项后缀*清晰可见；页面元素无重叠、截断、排版错位 | 必填项Date of birth没有必填符号标识 BUG_003 |
+| TC_REG_002 | 验证Country下拉默认占位及选项字体统一性 | 进入注册页，定位Country下拉选择框 | 1.查看下拉默认提示文本；2.点击下拉箭头展开全部选项，查看字体样式 | 默认占位Select your country *完整显示；所有下拉选项字号、字体完全统一，无局部选项字体缩小问题 | 局部选项Austria字体缩小 BUG_004 |
+| TC_REG_003 | 验证Register按钮展示及Chrome宽度合规 | Chrome浏览器打开注册页，定位注册按钮 | 1.查看按钮文字、配色、宽度尺寸 | 按钮文本Register清晰，Chrome下按钮宽度符合设计规范，无过宽、过窄样式异常 | Chrome下Register按钮宽度过窄 BUG_005 |
+| TC_REG_004 | 验证Chrome下Tab键焦点跳转顺序正确性 | Chrome打开注册页，初始焦点在页面空白区域 | 1.连续按Tab正向切换焦点；2.Shift+Tab反向切换焦点 | 焦点严格按视觉顺序跳转：First name→Last name→Date of birth→Address→Postcode→City→Country→State→Phone→E-mail→Password→Register，无乱序跳转 | 焦点跳转顺序为First name→Last name→Address→Postcode→City→Country→State→Phone→E-mail→Register→Date of birth→Password BUG_006 |
+| TC_REG_005 | 验证Edge、Chrome错误提示字体一致性 | Edge、Chrome分别打开页面，触发表单校验报错 | 1.任意字段输入非法内容提交，对比两浏览器报错字体、字号 | Edge与Chrome报错提示字体、样式、字号完全一致，无差异化渲染 | 与预期一致 |
+| TC_REG_006 | 验证First name输入特殊字符触发Invalid character报错 | 注册页面所有必填项均填写合法合规内容，仅待First name输入 | 1.First name输入Jack@#$特殊字符组合；2.点击提交按钮 | 立即弹出Invalid character错误提示，表单拦截提交，错误提示绑定First name字段 | 与预期一致 |
+| TC_REG_007 | 验证Last name输入特殊字符触发Invalid character报错 | 注册页面所有必填项均填写合法合规内容，仅待Last name输入 | 1.Last name输入Lee&*()特殊符号；2.失焦或提交表单 | 弹出Invalid character报错，无法提交，精准定位Last name错误项 | 与预期一致 |
+| TC_REG_008 | 验证 Country、State 标签与输入控件绑定配对正确性 | 注册页面所有必填项均填写合法合规内容 | 1. 观察 Country 文字标签下方对应的输入控件类型、占位符；2. 观察 State 文字标签下方对应的输入控件类型、占位符 | Country 标签下方必须为国家下拉选择框，默认占位Select your country *；State 标签下方必须为州或省文本输入框，默认占位Your state *；标签与控件一一对应，无配对颠倒 | Country 标签下挂载了 State 文本输入框，State 标签下挂载了 Country 下拉选择框，标签与控件绑定颠倒 BUG_007 |
+| TC_REG_009 | 验证已注册账号密码框无密码提示泄露 | 邮箱输入框填写已注册账号邮箱，其余必填项均填写合法合规内容，定位密码框 | 1.邮箱填入注册账号customer@practicesoftwaretesting.com；2.密码框输入任意字符 | 前端无历史密码联想、预填充、明文提示等泄密行为，全程密文输入保护 | 与预期一致 |
+| TC_REG_010 | 验证全部必填项空值提交拦截功能 | 所有带*必填输入框清空，非必填出生日期留空 | 1.直接点击Register注册按钮 | 表单拒绝提交，所有空必填项高亮标记，弹窗提示必填项不能为空 | 空提交成功拦截 Date of birth，该字段无页面必填星号，与 UI 展示不一致 BUG_003 |
+| TC_REG_011 | 验证Date of birth日期格式与合法范围校验 | 注册页面所有必填项均填写合法合规内容，仅出生日期输入框为空 | 1.输入2026/06/26斜杠分隔格式，点击 Register 提交；2.清空，输入无效日期2026-02-30提交；3.输入未来日期2046-05-01提交；4.输入合法历史日期2000-01-01提交；5.输入未成年出生日期2021-05-13提交 | 斜杠格式、无效日期输出Please enter a valid date in YYYY-MM-DD format.；未来日期、未成年提示输出Customer must be 18 years old.；合法历史日期提交表单后注册成功 |与预期一致 |
+| TC_REG_012 | 验证E-mail address邮箱格式合法性校验 | 注册页面所有必填项均填写合法合规内容，仅邮箱输入框为空 | 1.输入无@邮箱test123.com提交；2.输入无域名邮箱test@提交；3.输入合法邮箱test_reg@demo.com提交 | 非法邮箱触发格式错误提示E-mail format is invalid.，标准合规邮箱可通过前端校验 | 与预期一致 |
+| TC_REG_013 | 验证Phone手机号合法字符输入校验 | 注册页面所有必填项均填写合法合规内容，仅Phone输入框为空 | 1.输入字母组合abc13800；2.输入手机号+8613800138000；3.输入非法符号138#9999 4.输入13800138000| 字母、符号拦截报错Only numbers are allowed.；数字允许正常录入 | 与预期一致 |
+| TC_REG_014 | 验证密码长度边界值校验 | 注册页面所有必填项均填写合法合规内容，仅密码框为空，密码框规则：10-40字符 | 1.输入7位密码pass123提交；2.输入9位密码pass12345提交；3.输入10位密码pass123456提交；4.输入39位临界密码pass123pass123pass123pass123pass123pass；5.输入40位临界密码pass123pass123pass123pass123pass123pass1；6.输入41位临界密码pass123pass123pass123pass123pass123pass12 3.输入42位超长密码pass123pass123pass123pass123pass123pass123 | 小于最小长度报错Password must be minimal 10 characters long.；超出最大长度均报错Password can not be more than 40 characters long.；10位、40位临界长度可正常录入提交 | 输入9位密码pass12345提交成功登录成功 BUG_8|
+| TC_REG_015 | 验证页面刷新后表单自动重置功能 | 已填写部分表单内容，内容未提交 | 1.浏览器刷新当前注册页面 | 所有输入框内容清空，页面恢复初始默认状态，占位符全部还原 | 与预期一致 |
+| TC_REG_016 | 验证完整注册和登录闭环正向业务流程 | 注册页面全字段合规填写完成 | 1.点击Register提交注册；2.注册成功跳转登录页；3.使用新账号密码登录系统 | 注册成功数据正常入库；成功跳转登录页面；账号密码匹配可正常登录系统 | 与预期一致 |

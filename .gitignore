@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.pyo
+
+# 虚拟环境
+.venv/
+venv/
+
+# IDE
+.vscode/
+
+# 临时文件
+*.tmp
+*.log
