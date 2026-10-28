@@ -106,7 +106,7 @@ toolshop-testing
 ### 项目参考资料
 - [项目官方说明 & 全部已知bug清单](./docs/practice-soft-testing-withbugs.md)
 
-## 🚀 Postman集合导入使用
+## Postman集合导入使用
 1. 打开Postman客户端 → `Import`
 2. 选择文件：`api‑testing/postman/toolshop‑postman‑collection.json`
 3. 导入完成后，集合内已经预置各个接口请求；
@@ -156,7 +156,7 @@ toolshop-testing
 - 手工测试学习笔记：[manual‑testing/study‑record.md](./manual-testing/study-record.md)
 - 接口测试学习笔记：[api‑testing/study‑record.md](./api-testing/study-record.md)
 
-## 📜 License
+## License
 本仓库仅用于个人软件测试学习练习，被测Toolshop系统参考官方开源项目。
 
 ---
