@@ -8,7 +8,7 @@
 | 测试版本 | Sprint 5 with Bugs |
 | 计划制定人 | xushixian |
 | 计划日期 | 2026-06-28 |
-| 文档版本 | v1.0 |
+| 文档版本 | v1.1 |
 
 ---
 
@@ -78,7 +78,7 @@
 | 项目 | 配置 |
 | --- | --- |
 | 测试设备 | ASUS Zenbook 笔记本电脑 |
-| 处理器 | Intel Core i7（或同等级） |
+| 处理器 | Intel Core i5 |
 | 内存 | 16 GB |
 | 操作系统 | Windows 11 Home (Build 26100) |
 | 网络 | 家庭宽带（公网 HTTPS 访问） |
@@ -87,13 +87,13 @@
 
 | 类别 | 软件/工具 | 版本/说明 |
 | --- | --- | --- |
-| 被测前端 | Toolshop 前端应用 | Sprint 5 with bugs `https://with-bugs.practicesoftwaretesting.com` |
-| 被测后端 | Toolshop API | Sprint 5 with bugs `https://api-with-bugs.practicesoftwaretesting.com` |
+| 被测前端 | Toolshop 前端应用 | [Sprint 5 with bugs](https://with-bugs.practicesoftwaretesting.com) |
+| 被测后端 | Toolshop API | [Sprint 5 with bugs](https://api-with-bugs.practicesoftwaretesting.com) |
 | 浏览器（主要） | Google Chrome | 最新稳定版 |
 | 浏览器（辅助） | Microsoft Edge | 最新稳定版 |
 | 浏览器（辅助） | Mozilla Firefox | 最新稳定版 |
 | 开发者工具 | Chrome DevTools | Network 面板用于抓包验证 |
-| API文档 | Swagger | `https://api-with-bugs.practicesoftwaretesting.com/api/documentation` |
+| API文档 | Swagger | [https://api-with-bugs.practicesoftwaretesting.com/api/documentation](https://api-with-bugs.practicesoftwaretesting.com/api/documentation) |
 | 文档工具 | Markdown | 用例与报告编写 |
 
 ### 3.3 测试账号
@@ -177,10 +177,9 @@
 
 | 文档 | 路径/链接 |
 | --- | --- |
-| 官方项目技术文档 | `toolshop-testing/docs/practice-soft-testing.md` |
-| Swagger API 文档 | `https://api-with-bugs.practicesoftwaretesting.com/api/documentation` |
+| 官方项目技术文档 | [practice-soft-testing.md](../docs/practice-soft-testing-withbugs.md) |
+| Swagger API 文档 | [https://api-with-bugs.practicesoftwaretesting.com/api/documentation](https://api-with-bugs.practicesoftwaretesting.com/api/documentation) |
 | 官方已知 Bug 清单 | #1-#94（见 practice-soft-testing.md） |
-| 测试学习笔记 | `tools-note/测试学习笔记.md` |
 
 ---
 
@@ -342,3 +341,4 @@
 | 版本 | 日期 | 修订人 | 修订内容 |
 | --- | --- | --- | --- |
 | v1.0 | 2026-06-28 | xushixian | 初始版本，制定完整测试计划 |
+| v1.1 | 2026-7-1 | xushixian | 优化文档排版与格式 |

@@ -50,7 +50,7 @@
 |鉴权方式|Bearer Token，请求头携带 Authorization: Bearer {{token}}|
 |请求参数|路径必填参数userId：整数类型，代表用户唯一标识，示例值：1|
 |请求头可选参数|Accept: application/json（指定返回数据格式为 JSON）|
-|可能的响应结果1|响应状态码: 200 响应数据格式：application/json 返回示例：{"first_name":"John","last_name":"Doe","address":"Street 1","city":"City","state":"State","country":"Country","postcode":"1234AA","phone":"0987654321","dob":"1970-01-01","email":"john@doe.example","id":0}|
+|可能的响应结果1|响应状态码: 200 响应数据格式：application/json 返回示例：{"first_name":"John","last_name":"Doe","address":"Street 1","city":"City","state":"State","country":"Country","postcode":"1234AA","phone":"0987654321","dob":"1970-01-01","email":"<john@doe.example>","id":0}|
 |可能的响应结果2|响应状态码: 401 描述：未登录/身份认证失败 响应数据格式：application/json 返回示例：{"message": "Unauthorized"}|
 |可能的响应结果3|响应状态码: 404 描述：未找到对应资源 响应数据格式：application/json 返回示例：{"message": "Requested item not found"}|
 |可能的响应结果4|响应状态码: 405 描述：当前请求路由不允许使用该请求方法 响应数据格式：application/json 返回示例：{"message": "Method is not allowed for the requested route"}|

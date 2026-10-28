@@ -5,8 +5,8 @@
 | 项目名称 | Practice Software Testing — Toolshop（Sprint 5 with Bugs） |
 | --- | --- |
 | 测试版本 | Sprint 5 with Bugs |
-| 被测前端 | `https://with-bugs.practicesoftwaretesting.com` |
-| 被测API | `https://api-with-bugs.practicesoftwaretesting.com` |
+| 被测前端 | [https://with-bugs.practicesoftwaretesting.com](https://with-bugs.practicesoftwaretesting.com) |
+| 被测API | [https://api-with-bugs.practicesoftwaretesting.com](https://api-with-bugs.practicesoftwaretesting.com) |
 | 测试类型 | 手工功能测试 |
 | 测试人员 | xushixian |
 | 报告日期 | 2026-06-28 |
@@ -44,9 +44,7 @@
 
 ### 1.4 背景信息
 
-被测系统 Practice Software Testing — Toolshop 是一个专为软件测试实训设计的电商应用。Sprint 5（with bugs）版本中**预埋了 90+ 个已知缺陷**，涵盖 UI 展示、功能逻辑、API 安全及无障碍四大类别，旨在供测试人员练习探索性测试、Bug 发现与报告撰写等核心技能。
-
-该系统的技术栈为：**后端 Laravel 12 + PHP 8.3，前端 Angular 20 + Bootstrap 5，数据库 MariaDB 10.6**，通过 Docker 容器化部署。
+被测系统 Practice Software Testing — Toolshop 是一个专为软件测试设计的电商应用。Sprint 5（with bugs）版本中**预埋了 90+ 个已知缺陷**，涵盖 UI 展示、功能逻辑、API 安全及无障碍四大类别，旨在供测试人员练习探索性测试、Bug 发现与报告撰写等核心技能。
 
 ---
 
@@ -66,8 +64,8 @@
 
 | 项目 | 版本/说明 |
 | --- | --- |
-| 被测应用前端 | `https://with-bugs.practicesoftwaretesting.com` |
-| 被测应用API | `https://api-with-bugs.practicesoftwaretesting.com` |
+| 被测应用前端 | [https://with-bugs.practicesoftwaretesting.com](https://with-bugs.practicesoftwaretesting.com) |
+| 被测应用API | [https://api-with-bugs.practicesoftwaretesting.com](https://api-with-bugs.practicesoftwaretesting.com) |
 | 主要测试浏览器 | Google Chrome（最新稳定版） |
 | 辅助测试浏览器 | Microsoft Edge、Mozilla Firefox |
 | 浏览器开发者工具 | Chrome DevTools（Network 面板用于抓包验证接口参数） |
@@ -514,49 +512,50 @@
 
 ---
 
+抱歉，确实看错了。`test-report.md` 位于 `manual-testing/` 下，截图实际在 `manual-testing/bug-reports/images/`，所以相对路径应为 `bug-reports/images/...`。修正如下：
+
 ## 附录
 
 ### 附录A：测试用例文件索引
 
 | 文件 | 路径 |
 | --- | --- |
-| 首页+商品列表测试用例 | `toolshop-testing/manual-testing/test-cases/TC_home.md` |
-| 登录模块测试用例 | `toolshop-testing/manual-testing/test-cases/TC_login.md` |
-| 注册模块测试用例 | `toolshop-testing/manual-testing/test-cases/TC_register.md` |
-| 下单流程+商品+购物车+地址+支付测试用例 | `toolshop-testing/manual-testing/test-cases/TC_order-flow.md` |
+| 首页+商品列表测试用例 | [test-cases/TC_home.md](test-cases/TC_home.md) |
+| 登录模块测试用例 | [test-cases/TC_login.md](test-cases/TC_login.md) |
+| 注册模块测试用例 | [test-cases/TC_register.md](test-cases/TC_register.md) |
+| 下单流程+商品+购物车+地址+支付测试用例 | [test-cases/TC_order-flow.md](test-cases/TC_order-flow.md) |
 
 ### 附录B：缺陷截图文件索引
 
 | Bug编号 | 截图文件 |
 | --- | --- |
-| BUG_001 | `images/bug001.png` |
-| BUG_002 | `images/bug002.png` |
-| BUG_003 | `images/bug003.png` |
-| BUG_004 | `images/bug004.png` |
-| BUG_005 | `images/bug005-chrome.png`, `images/bug005-edge.png` |
-| BUG_006 | `images/bug006.png` |
-| BUG_007 | `images/bug007.png` |
-| BUG_008 | `images/bug008-login.png`, `images/bug008-register.png` |
-| BUG_009 | `images/bug009.png` |
-| BUG_010 | `images/bug010.png` |
-| BUG_011 | `images/bug011.png` |
-| BUG_012 | `images/bug012.png` |
-| BUG_013 | `images/bug013-nameaz.png`, `images/bug013-nameza.png`, `images/bug013-pricelowhigh.png`, `images/bug013-pricehighlow.png`, `images/bug013-co2best.png`, `images/bug013-co2worst.png` |
-| BUG_014 | `images/bug014-1to50.png`, `images/bug014-1to200.png`, `images/bug014-80to150.png` |
-| BUG_015 | `images/bug015.png` |
-| BUG_016 | `images/bug016.png` |
-| BUG_017 | `images/bug017.png` |
-| BUG_018 | `images/bug018.png` |
-| BUG_019 | `images/bug019.png` |
-| BUG_020 | `images/bug020-add.png`, `images/bug020-sub.png` |
-| BUG_021 | `images/bug021.png` |
-| BUG_022 | `images/bug022.png` |
-| BUG_023 | `images/bug023-pluslimit.png`, `images/bug023-inputsuccess.png` |
-| BUG_024 | `images/bug024.png` |
-| BUG_025 | `images/bug025.png` |
-| BUG_026 | `images/bug026.png` |
-| BUG_027 | `images/bug027.png` |
-| BUG_028 | `images/bug028.png` |
-| BUG_029 | `images/bug029.png` |
-| BUG_030 | `images/bug030.png` |
-
+| BUG_001 | [bug-reports/images/bug001.png](bug-reports/images/bug001.png) |
+| BUG_002 | [bug-reports/images/bug002.png](bug-reports/images/bug002.png) |
+| BUG_003 | [bug-reports/images/bug003.png](bug-reports/images/bug003.png) |
+| BUG_004 | [bug-reports/images/bug004.png](bug-reports/images/bug004.png) |
+| BUG_005 | [bug-reports/images/bug005-chrome.png](bug-reports/images/bug005-chrome.png), [bug-reports/images/bug005-edge.png](bug-reports/images/bug005-edge.png) |
+| BUG_006 | [bug-reports/images/bug006.png](bug-reports/images/bug006.png) |
+| BUG_007 | [bug-reports/images/bug007.png](bug-reports/images/bug007.png) |
+| BUG_008 | [bug-reports/images/bug008-login.png](bug-reports/images/bug008-login.png), [bug-reports/images/bug008-register.png](bug-reports/images/bug008-register.png) |
+| BUG_009 | [bug-reports/images/bug009.png](bug-reports/images/bug009.png) |
+| BUG_010 | [bug-reports/images/bug010.png](bug-reports/images/bug010.png) |
+| BUG_011 | [bug-reports/images/bug011.png](bug-reports/images/bug011.png) |
+| BUG_012 | [bug-reports/images/bug012.png](bug-reports/images/bug012.png) |
+| BUG_013 | [bug-reports/images/bug013-nameaz.png](bug-reports/images/bug013-nameaz.png), [bug-reports/images/bug013-nameza.png](bug-reports/images/bug013-nameza.png), [bug-reports/images/bug013-pricelowhigh.png](bug-reports/images/bug013-pricelowhigh.png), [bug-reports/images/bug013-pricehighlow.png](bug-reports/images/bug013-pricehighlow.png), [bug-reports/images/bug013-co2best.png](bug-reports/images/bug013-co2best.png), [bug-reports/images/bug013-co2worst.png](bug-reports/images/bug013-co2worst.png) |
+| BUG_014 | [bug-reports/images/bug014-1to50.png](bug-reports/images/bug014-1to50.png), [bug-reports/images/bug014-1to200.png](bug-reports/images/bug014-1to200.png), [bug-reports/images/bug014-80to150.png](bug-reports/images/bug014-80to150.png) |
+| BUG_015 | [bug-reports/images/bug015.png](bug-reports/images/bug015.png) |
+| BUG_016 | [bug-reports/images/bug016.png](bug-reports/images/bug016.png) |
+| BUG_017 | [bug-reports/images/bug017.png](bug-reports/images/bug017.png) |
+| BUG_018 | [bug-reports/images/bug018.png](bug-reports/images/bug018.png) |
+| BUG_019 | [bug-reports/images/bug019.png](bug-reports/images/bug019.png) |
+| BUG_020 | [bug-reports/images/bug020-add.png](bug-reports/images/bug020-add.png), [bug-reports/images/bug020-sub.png](bug-reports/images/bug020-sub.png) |
+| BUG_021 | [bug-reports/images/bug021.png](bug-reports/images/bug021.png) |
+| BUG_022 | [bug-reports/images/bug022.png](bug-reports/images/bug022.png) |
+| BUG_023 | [bug-reports/images/bug023-pluslimit.png](bug-reports/images/bug023-pluslimit.png), [bug-reports/images/bug023-inputsuccess.png](bug-reports/images/bug023-inputsuccess.png) |
+| BUG_024 | [bug-reports/images/bug024.png](bug-reports/images/bug024.png) |
+| BUG_025 | [bug-reports/images/bug025.png](bug-reports/images/bug025.png) |
+| BUG_026 | [bug-reports/images/bug026.png](bug-reports/images/bug026.png) |
+| BUG_027 | [bug-reports/images/bug027.png](bug-reports/images/bug027.png) |
+| BUG_028 | [bug-reports/images/bug028.png](bug-reports/images/bug028.png) |
+| BUG_029 | [bug-reports/images/bug029.png](bug-reports/images/bug029.png) |
+| BUG_030 | [bug-reports/images/bug030.png](bug-reports/images/bug030.png) |

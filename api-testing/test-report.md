@@ -11,7 +11,7 @@
 | **测试人员** | xushixian |
 | **测试日期** | 2026-07-10 |
 | **报告日期** | 2026-07-10 |
-| **被测系统** | Practice Software Testing Toolshop (api-with-bugs.practicesoftwaretesting.com) |
+| **被测系统** | Practice Software Testing Toolshop |
 
 ---
 
@@ -49,7 +49,7 @@
 - **参数校验测试**：验证接口对必填参数缺失、非法格式、边界值的校验能力。
 - **鉴权与权限测试**：验证 Token 鉴权机制、角色权限隔离、匿名访问拦截。
 - **异常场景测试**：验证接口对非法请求方法、错误 Content-Type、不存在的资源等异常场景的处理。
-- **安全测试**：SQL 注入防护、越权访问（IDOR）、敏感数据泄露、请求方法绕过等。
+- **安全类测试检查**：SQL 注入防护、越权访问（IDOR）、敏感数据泄露、请求方法绕过等。
 
 ### 1.4 背景信息
 
@@ -61,8 +61,8 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 
 | 配置项 | 详情 |
 | --- | --- |
-| **被测系统地址** | `https://api-with-bugs.practicesoftwaretesting.com` |
-| **接口文档地址** | `https://api-with-bugs.practicesoftwaretesting.com/api/documentation/` |
+| **被测系统地址** | [Practice Software Testing Toolshop](https://api-with-bugs.practicesoftwaretesting.com) |
+| **接口文档地址** | [Swagger 接口文档](https://api-with-bugs.practicesoftwaretesting.com/api/documentation) |
 | **测试工具** | Postman（桌面客户端） |
 | **测试方式** | 黑盒手工测试 |
 | **网络环境** | 公网访问 |
@@ -86,7 +86,7 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 2. **输入验证测试**：包括必填参数缺失、参数类型错误、边界值、空值、非法格式等。
 3. **鉴权测试**：验证有/无 Token 场景下的访问控制。
 4. **权限测试**：验证不同角色（管理员 vs 普通用户）的数据访问边界。
-5. **安全测试**：SQL 注入、越权访问、敏感字段泄露、HTTP 方法绕过。
+5. **安全类测试检查**：SQL 注入、越权访问、敏感字段泄露、HTTP 方法绕过。
 6. **异常处理测试**：非法请求方法、错误 Content-Type、不存在资源等场景。
 
 ### 3.2 测试设计技术
@@ -102,11 +102,9 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 ### 3.3 测试执行流程
 
 ```
-1. 接口文档分析 → 2. 测试用例设计 → 3. Postman 测试脚本编写
-       ↓
-4. 逐条执行测试 → 5. 记录实际结果 → 6. 预期与实际对比
-       ↓
-7. 缺陷汇总分类 → 8. 测试报告撰写
+1. 接口文档分析 → 2. 测试用例设计 → 3. Postman 测试脚本编写 →
+4. 逐条执行测试 → 5. 记录实际结果 → 
+6. 预期与实际对比 → 7. 缺陷汇总分类 → 8. 测试报告撰写
 ```
 
 ---
@@ -120,9 +118,9 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 | 编号 | 测试标题 | 测试数据 | 预期结果 | 实际结果 | 结论 |
 | --- | --- | --- | --- | --- | --- |
 | TC_LOG_001 | 合法账号密码正常登录 | email: customer@..., password: welcome01 | 200, 返回 token | 与预期一致 | ✅ PASS |
-| TC_LOG_002 | 邮箱格式错误登录 | email: testdemo.com (无@) | 401, 拒绝下发 token | 与预期一致 | ✅ PASS |
+| TC_LOG_002 | 邮箱格式错误登录 | email: testdemo.com | 401, 拒绝下发 token | 与预期一致 | ✅ PASS |
 | TC_LOG_003 | 账号存在但密码错误 | password: 123456wrong | 401, 账号密码不匹配 | 与预期一致 | ✅ PASS |
-| TC_LOG_004 | 未注册邮箱登录 | email: nouser@test.com | 401, 用户不存在 | 与预期一致 | ✅ PASS |
+| TC_LOG_004 | 未注册邮箱登录 | email: <nouser@test.com> | 401, 用户不存在 | 与预期一致 | ✅ PASS |
 | TC_LOG_013 | Token 有效期合理性校验 | 正常登录查看 expires_in | expires_in 数值合理，不超长 | 与预期一致 | ✅ PASS |
 
 #### 4.1.2 参数校验测试
@@ -142,7 +140,7 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 | TC_LOG_009 | GET 方式调用登录接口 | GET /users/login | 405 Method Not Allowed | 401 Unauthorized | ❌ FAIL |
 | TC_LOG_010 | Content-Type: text/plain | 非 JSON 请求头 | 415 Unsupported Media Type | 401 Unauthorized | ❌ FAIL |
 
-#### 4.1.4 安全测试
+#### 4.1.4 安全类测试检查
 
 | 编号 | 测试标题 | 测试数据 | 预期结果 | 实际结果 | 结论 |
 | --- | --- | --- | --- | --- | --- |
@@ -275,7 +273,7 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 
 | 维度 | 分类 | 数量 |
 | --- | --- | --- |
-| | 最高（严重） | 9 |
+| | 最高 | 9 |
 | **按优先级** | 高 | 8 |
 | | 中 | 8 |
 | | | |
@@ -313,7 +311,7 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 | Bug 编号 | 标题 | 严重性 | 优先级 | 关联用例 |
 | --- | --- | --- | --- | --- |
 | BUG_API_001 | 普通用户查询全量用户列表权限不足返回 401 而非 403 | 主要 | 高 | TC_USERS_002 |
-| BUG_API_002 | 普通用户可通过 userId 路径参数访问其他用户详情（IDOR 漏洞） | 严重 | 高 | TC_USER_003 |
+| BUG_API_002 | 普通用户可通过 userId 路径参数访问其他用户详情 | 严重 | 高 | TC_USER_003 |
 | BUG_API_003 | 用户 ID 为连续自增数字，可暴力枚举遍历全部用户数据 | 严重 | 高 | TC_USER_009 |
 | BUG_API_004 | 商品列表接口向非管理员泄露库存 stock 敏感字段 | 次要 | 中 | TC_PROD_001 |
 | BUG_API_005 | 普通用户查询自身详情泄露 enabled、failed_login_attempts 安全敏感字段 | 主要 | 高 | TC_USER_002 |
@@ -343,8 +341,6 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 | BUG_API_014 | 匿名可直接查询所有用户发票数据 | 严重 | 最高 | TC_INV_GET_003 |
 | BUG_API_015 | 创建发票未校验商品单价，可任意篡改生成虚假发票 | 严重 | 最高 | TC_INV_POST_003 |
 | BUG_API_016 | 创建发票未校验负数购买数量，可生成非法负数金额发票 | 主要 | 高 | TC_INV_POST_007 |
-
-> 注：商品删除接口中 TC_PROD_DEL_007 (POST 方法访问删除路由) 测试通过，未发现 Bug，故未列入；BUG_API_009 涉及品牌删除 PUT 方法绕过，已列入品牌接口缺陷。
 
 ---
 
@@ -407,7 +403,7 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 
 #### 6.1.5 SQL 注入安全风险（最高风险）
 
-登录接口邮箱字段存在 SQL 注入漏洞，传入注入载荷后服务端直接抛出 500 Internal Server Error，表明后端未使用参数化查询或预编译语句，注入载荷导致 SQL 执行异常。这是 **OWASP API Top 10 — API8:2023 安全配置错误/注入** 的典型表现。
+登录接口邮箱字段存在 SQL 注入漏洞，传入注入载荷后服务端直接抛出 500 Internal Server Error，表明后端未使用参数化查询或预编译语句，注入载荷导致 SQL 执行异常。这是 **OWASP API Top 10 — API8:2023 安全配置错误** 的典型表现。
 
 - 受影响接口：POST /users/login
 - 风险等级：**严重（Critical）**
@@ -515,11 +511,12 @@ Practice Software Testing Toolshop 是一个用于软件测试实践的开源电
 ---
 
 > 📎 **附录文件**：
-> - [登录接口测试详情](./login-api-testing.md)
-> - [查询接口测试详情](./query-api-testing.md)
-> - [删除接口测试详情](./delete-api-testing.md)
-> - [发票接口测试详情](./invoices-api-testing.md)
-> - [缺陷汇总表](./api-bug-summary.md)
-> - [Postman 测试集合](./toolshop-postman-collection.json)
+>
+> - [登录接口测试详情](./test-cases/login-api-testing.md)
+> - [查询接口测试详情](./test-cases/query-api-testing.md)
+> - [删除接口测试详情](./test-cases/delete-api-testing.md)
+> - [发票接口测试详情](./test-cases/invoices-api-testing.md)
+> - [缺陷汇总表](./bug-reports/api-bug-summary.md)
+> - [Postman 测试集合](./postman/toolshop-postman-collection.json)
 > - [学习记录与接口文档](./study-record.md)
 

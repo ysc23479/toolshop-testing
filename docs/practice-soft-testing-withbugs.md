@@ -5,7 +5,7 @@ An e-commerce Toolshop application built for practicing software testing across 
 ## Tech Stack
 
 | Layer | Technology |
-|-------|------------|
+| --- | --- |
 | Backend | Laravel 12, PHP 8.3 |
 | Frontend | Angular 20, Bootstrap 5 |
 | Database | MariaDB 10.6 |
@@ -15,7 +15,7 @@ An e-commerce Toolshop application built for practicing software testing across 
 ## Default Accounts
 
 | Name | Role | Email | Password |
-|------|------|-------|----------|
+| --- | --- | --- | --- |
 | John Doe | admin | `admin@practicesoftwaretesting.com` | welcome01 |
 | Jane Doe | user | `customer@practicesoftwaretesting.com` | welcome01 |
 | Jack Howe | user | `customer2@practicesoftwaretesting.com` | welcome01 |
@@ -25,9 +25,9 @@ An e-commerce Toolshop application built for practicing software testing across 
 
 **Sprint 5 (with bugs)**
 
-- Application: https://with-bugs.practicesoftwaretesting.com
-- API: https://api-with-bugs.practicesoftwaretesting.com
-- Swagger: https://api-with-bugs.practicesoftwaretesting.com/api/documentation
+- Application: [https://with-bugs.practicesoftwaretesting.com](https://with-bugs.practicesoftwaretesting.com)
+- API 地址: [https://api-with-bugs.practicesoftwaretesting.com](https://api-with-bugs.practicesoftwaretesting.com)
+- Swagger 接口文档: [https://api-with-bugs.practicesoftwaretesting.com/api/documentation](https://api-with-bugs.practicesoftwaretesting.com/api/documentation)
 
 ---
 
@@ -53,13 +53,13 @@ A variant of Sprint 5 with 90+ intentional bugs embedded throughout the applicat
 **Additional API Endpoint**
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
+| --- | --- | --- |
 | GET | /logs/laravel.log | View application logs |
 
 **Hosted Version**
 
 | Component | URL |
-|-----------|-----|
+| --- | --- |
 | Application | with-bugs.practicesoftwaretesting.com |
 | API | api-with-bugs.practicesoftwaretesting.com |
 | Swagger | API Documentation |
@@ -71,7 +71,7 @@ A variant of Sprint 5 with 90+ intentional bugs embedded throughout the applicat
 ### UI Bugs
 
 | ID | Page | Title |
-|----|------|-------|
+| --- | --- | --- |
 | 1 | Cart | Plus / minus sign is not adding the amount |
 | 2 | Category page | Sort works the other way around |
 | 3 | Category page | Category "Chainsaw" leads to 404 |
@@ -147,7 +147,7 @@ A variant of Sprint 5 with 90+ intentional bugs embedded throughout the applicat
 ### API / Security Bugs
 
 | ID | Area | Title |
-|----|------|-------|
+| --- | --- | --- |
 | 71 | users/{id} | Can retrieve details from a different user by changing the ID (OWASP API1:2023 - Broken Object Level Authorization) |
 | 72 | Token / refresh token | Long-lived access token (260000 min / refresh 520000 min) (OWASP API2:2023 - Broken Authentication) |
 | 73 | users | Responses reveal enabled and failed_login_attempts to non-admins (OWASP API3:2023 - Broken Object Property Level Authorization) |
@@ -165,7 +165,7 @@ A variant of Sprint 5 with 90+ intentional bugs embedded throughout the applicat
 ### Accessibility Bugs
 
 | ID | Area | Title |
-|----|------|-------|
+| --- | --- | --- |
 | 85 | Links | Contrast of links too low (4.26:1) |
 | 86 | Checkout wizard | Contrast of checkout wizard labels too low (3.94:1) |
 | 87 | Login form | No labels on form inputs |
@@ -182,7 +182,7 @@ A variant of Sprint 5 with 90+ intentional bugs embedded throughout the applicat
 ## Discoverable Via Tour Types
 
 | Tour | Description |
-|------|-------------|
+| --- | --- |
 | Landmark Tour | Test key functional landmarks (buttons, inputs, counters) |
 | Supporting Actor Tour | Test secondary UI elements (dropdowns, sort, filters) |
 | SuperModel Tour | Visual/layout issues across browsers |
