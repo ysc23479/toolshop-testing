@@ -1,5 +1,5 @@
 # toolshop‑testing
-> Practice Software Testing — Toolshop(Sprint5‑with‑bugs) 手工+接口测试实战仓库
+> Practice Software Testing — Toolshop(Sprint5‑with‑bugs) 手工+接口测试实战仓库<br>
 本仓库为软件测试练习项目，针对预埋90+ intentional bugs 的 Toolshop 电商实训系统，完成**手工黑盒功能测试**与**Postman API接口功能**，沉淀完整测试资产：测试计划、测试用例、缺陷报告、测试报告、Postman集合。
 
 ## 项目背景
@@ -62,9 +62,9 @@ toolshop-testing
 
 ## 测试工作概述
 ### 手工功能测试（manual‑testing）
-**测试版本**：Sprint5 with Bugs
-**测试类型**：系统级黑盒手工功能测试
-**浏览器环境**：Chrome（主）、Edge
+**测试版本**：Sprint5 with Bugs<br>
+**测试类型**：系统级黑盒手工功能测试<br>
+**浏览器环境**：Chrome（主）、Edge<br>
 **测试设计方法**：等价类划分、边界值分析、场景法、错误推测法、抓包辅助验证
 - 测试覆盖模块：登录、注册、首页&筛选、商品详情、购物车、账单地址、端到端下单结账流程
 - 产出指标：**73条手工测试用例，发现30个UI缺陷**
@@ -75,7 +75,7 @@ toolshop-testing
 > 关键阻塞问题：支付网关缺失导致完整购物流程无法闭环；价格筛选接口传参缺失筛选完全失效。
 
 ### API接口测试（api‑testing）
-**测试工具**：Postman
+**测试工具**：Postman<br>
 **测试内容**：接口功能校验、参数合法性校验、鉴权权限控制、OWASP API Top10安全类测试检查、异常HTTP状态码校验
 - 覆盖接口：登录认证、用户查询、商品查询、品牌删除、商品删除、发票新增/查询，合计8个接口
 - 产出指标：**65条接口测试用例，发现25个接口缺陷**，总通过率64.6%
@@ -86,7 +86,7 @@ toolshop-testing
   4. 业务参数校验缺失，可篡改发票单价、生成负数数量脏数据；
   5. HTTP状态码不规范，参数错误和鉴权错误返回码混淆。
 
-## 📄 核心文档快速跳转
+## 核心文档快速跳转
 ### 手工测试
 - [测试计划](./manual-testing/test-plan.md)：测试目标、范围、环境、策略、准入准出、风险
 - [测试报告](./manual-testing/test-report.md)：用例执行统计、缺陷分析、版本质量结论

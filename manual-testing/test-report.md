@@ -512,8 +512,6 @@
 
 ---
 
-抱歉，确实看错了。`test-report.md` 位于 `manual-testing/` 下，截图实际在 `manual-testing/bug-reports/images/`，所以相对路径应为 `bug-reports/images/...`。修正如下：
-
 ## 附录
 
 ### 附录A：测试用例文件索引
